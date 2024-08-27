@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-banner",
+      "settings": {
+        "background": "shopify:\/\/shop_images\/products-page-banner.png",
+        "color_scheme": ""
+      }
+    },
+    "contact_N4fCz8": {
+      "type": "contact",
+      "settings": {
+        "heading": "Contact Us",
+        "text": "Feel free to drop us a line at <a href=\"mailTo:clumbusroasters@gmail.com\">clumbusroasters@gmail.com<\/a>",
+        "button": "Send",
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "contact_N4fCz8"
+  ]
+}

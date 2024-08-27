@@ -1,0 +1,63 @@
+.form__message.error {
+    font-size: 15px;
+    margin: 20px 0;
+    color: red;
+    text-transform: capitalize;
+}
+
+.product-details-item-icon img {
+    max-width: 52px;
+    height: auto;
+}
+
+.article-link {
+    overflow: hidden;
+    display: block;
+}
+
+.article-link:hover img {
+    transform: scale(1.1);
+}
+
+.article-link img {
+    transition: 300ms;
+}
+
+/* related product  */
+
+.related-product-items {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 50px;
+}
+
+.related-product-top {
+    text-align: center;
+}
+.shipping-rate {
+    text-align: right;
+    max-width: 180px;
+}
+.search-form-page .search-input-field {
+    background: #696969;
+    margin: 0;
+}
+.search-form-page {
+    margin-bottom: 50px;
+}
+@media only screen and (max-width:767px) {
+    .search-section {
+        padding-top: 120px;
+    }
+    .search-form-page {
+        margin-bottom: 24px;
+    }
+    .related-product-items {
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .swiper.swiper-thumbs .swiper-wrapper {
+        justify-content: center;
+    }
+}

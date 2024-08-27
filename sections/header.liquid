@@ -1,0 +1,112 @@
+{%- liquid
+  assign s = section.settings
+-%}
+<header class="main-header color-{{ s.color_scheme }} gredient">
+    <!-- navbar section start -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-wrapper">
+                <div class="navbar-menu">
+                    <div class="ham-menu-wrapper">
+                        <div class="ham-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="navbar-link-wrapper">
+                        {%- render 'desk-menu', section:section -%}
+                    </div>
+                    <div class="navbar-brand">
+                        <div class="navbar-brand-logo">
+                            <a href="{{ shop.url }}" class="main-menu-logo">
+                                {%- if s.logo !=blank -%}
+                                    {{ s.logo |  image_url: width:500 |  image_tag:class:'header-logo'  }}
+                                {% else %}
+                                    {{ 'image' |  placeholder_svg_tag:'header-svg-logo' }}
+                                {%- endif -%}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="navbar-link-wrapper navbar-link-wrapper-right-area">
+                        <ul class="nav-link-items">
+                            <li class="nav-link-item">
+                                <a href="{{ routes.account_url }}" class="nav-link">ACCOUNT</a>
+                            </li>
+                            <li class="nav-link-item">
+                                <span class="nav-link search-open">SEARCH</span>
+                                <div class="search-bar">
+                                    <div class="search-bar-close">
+                                        <div class="search-bar-close-icon">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </div>
+                                    </div>
+                                    {%- render 'search-form', variable: value -%}
+                                </div>
+                            </li>
+                            <li class="nav-link-item">
+                                <a href="/cart" class="nav-link">CART (<span class="item_count">{{ cart.item_count }}</span>)</a> 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar-icon-wrapper">
+                        <span class="navbar-icon search-open">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <div class="search-bar">
+                            <div class="search-bar-close">
+                                <div class="search-bar-close-icon">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                            </div>
+                            {%- render 'search-form' -%} 
+                        </div>
+                        <a href="#" class="navbar-icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- mobile menu start -->
+    {%- render 'mobile-menu', section:section -%}
+    <!-- mobile menu end -->
+    <!-- navbar section end -->
+</header>
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Menu",
+        "default" : "main-menu"
+      },
+      {
+        "type": "header",
+        "content": "Color"
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "Color Scheme",
+        "default" : "scheme-1"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Header",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}

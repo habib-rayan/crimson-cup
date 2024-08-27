@@ -1,0 +1,22 @@
+{%- assign s = section.settings -%}
+<ul class="nav-link-items">
+    {% for link in s.menu.links %}
+    <li class="nav-link-item">
+        {%- if link.links.size > 0 -%}
+            <a href="#" class="nav-link">
+                    {{ link.title }}
+                    <i class="fa-solid fa-angle-down"></i>
+            </a>
+            <ul class="nav-link-sub-menu-items">
+                {% for childlink in link.links %}
+                <li class="nav-link-sub-menu-item">
+                    <a href="{{ childlink.url }}" class="nav-link-sub-menu">{{ childlink.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+        <a href="{{ link.url }}" class="nav-link">{{ link.title }}</a>
+        {%- endif -%}
+    </li>
+    {% endfor %}
+</ul>

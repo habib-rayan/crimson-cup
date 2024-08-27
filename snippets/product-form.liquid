@@ -1,0 +1,18 @@
+{% form 'product', product, id:'product_form' %}
+    <input type="hidden" name="id" id="product_id" value="{{ product.selected_or_first_available_variant.id }}">
+    <div class="single-product-add-cart-area wow animate__animated animate__fadeInUp"
+        data-wow-duration="1s" data-wow-delay=".7s">
+        <div class="single-product-quantity">
+            <button type="button" class="single-product-quantity-btn quantity-decrease">
+                <i class="fa-solid fa-minus"></i>
+            </button>
+            <input type="number" value="1" name="quantity" class="product-qty single-product-quantity-total-input">
+            <button type="button" class="single-product-quantity-btn quantity-increase">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+        <div class="add-to-cart-btn-area">
+            <button type="submit" class="add-to-cart-btn">{{ block.settings.button }}</button>
+        </div>
+    </div>
+{% endform %}

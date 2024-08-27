@@ -1,0 +1,59 @@
+{%- assign s = section.settings -%}
+
+<section class="page-banner-section products-page-banner color-{{ s.color_scheme }}" id="section_{{ section.id }}">
+    <div class="container">
+        <div class="page-heading-wrapper">
+            <h1 class="page-heading">
+                {{ page.title }}
+                {{ blog.title }}
+                {{ collection.title }}
+            </h1>
+        </div>
+    </div>
+</section>
+
+{%- style -%}
+    #section_{{ section.id }} {
+        width: 100%;
+        background-image: url({{ s.background |  image_url: width:3000  }});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #0009;
+        background-blend-mode: color;
+    }
+
+{%- endstyle -%}
+
+
+{% schema %}
+    {
+        "name": "Page Banner",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "background",
+                "label": "Background"
+            },
+            
+            {
+                "type": "header",
+                "content": "Color"
+            },
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "label": "Color Scheme",
+                "default" : "scheme-1"
+            }
+        ],
+        
+        "presets": [
+            {
+                "name": "Page Banner",
+                "settings": {
+                }
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,213 @@
+{%- liquid
+  assign s = section.settings
+-%}
+<footer class="main-footer bg-{{ s.color_scheme }}">
+    <!-- footer section start -->
+    <section class="section footer-section">
+        <div class="container">
+            <div class="footer-section-items">
+                {% for block in section.blocks %}
+                    {%- assign b = block.settings -%}
+                    {%- case block.type -%}
+                    {%- when 'contact' -%}
+                        <div class="footer-section-item">
+                            <h6 class="footer-heading wow animate__animated animate__slideInLeft" data-wow-duration="1s"
+                                data-wow-delay=".1s">{{ b.heading }}</h6>
+                            <p class="footer-text wow animate__animated animate__slideInLeft" data-wow-duration="1s"
+                                data-wow-delay=".2s"><i class="fa-solid fa-phone-volume"></i><a
+                                    class="footer-contact-link" href="callto:{{ b.phone }}">{{ b.phone }}</a>
+                            </p>
+                            <p class="footer-text wow animate__animated animate__slideInLeft" data-wow-duration="1s"
+                                data-wow-delay=".3s"><i class="fa-solid fa-envelope-open-text"></i><a
+                                    class="footer-contact-link"
+                                    href="mailto:{{ b.email }}">{{ b.email }}</a>
+                            </p>
+                            <p class="footer-text wow animate__animated animate__slideInLeft" data-wow-duration="1s"
+                                data-wow-delay=".4s"><i class="fa-solid fa-location-dot"></i><a
+                                    class="footer-contact-link" href="#">{{ b.address }}</a>
+                            </p>
+                            <div class="social-link-wrapper">
+                                <h6 class="footer-social-link-heading wow animate__animated animate__slideInLeft"
+                                    data-wow-duration="1s" data-wow-delay=".1s">{{ b.social_heading }}</h6>
+                                {%- render 'social-links' -%}
+                            </div>
+                        </div>
+                    {%- when 'menu' -%}
+                        <div class="footer-section-item">
+                            <h6 class="footer-heading wow animate__animated animate__slideInUp" data-wow-duration="1s"
+                                data-wow-delay=".1s">{{ b.heading }}</h6>
+                            <ul class="footer-nav-links">
+                                {% for link in b.menu.links %}
+                                <li class="footer-nav-link wow animate__animated animate__slideInUp"
+                                    data-wow-duration="1s" data-wow-delay=".2s">
+                                    <a class="footer-nav-link-text" href="{{ link.url }}">{{ link.title }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {%- when 'newsletter' -%}
+                        <div class="footer-section-item">
+                            <h6 class="footer-heading wow animate__animated animate__slideInRight"
+                                data-wow-duration="1s" data-wow-delay=".1s">{{ b.heading }}</h6>
+                            <p class="footer-text wow animate__animated animate__slideInRight" data-wow-duration="1s"
+                                data-wow-delay=".2s">{{ b.text }}
+                            </p>
+                            <div class="footer-newsletter wow animate__animated animate__slideInRight"  data-wow-duration="1s" data-wow-delay=".3s">
+                                {% form 'customer', class: 'footer-form' %}
+                                    {%- if form.errors -%}
+                                    <small class="form__message error">
+                                        {{ form.errors.messages.email -}}
+                                    </small>
+                                    {%- endif -%}
+                                    {%- if form.posted_successfully? -%}
+                                        <h3 class="form__message">
+                                          {{- 'newsletter.success' | t }}
+                                        </h3>
+                                    {%- endif -%} 
+
+                                    <input class="footer-input" name="contact[email]" type="mail" placeholder="Enter your mail address">
+                                    <div class="footer-form-btn wow animate__animated animate__slideInRight"
+                                        data-wow-duration="1s" data-wow-delay=".4s">
+                                        <button type="submit" class="btn custom-btn" href="#">{{ b.button }}</button>
+                                    </div>
+                                {% endform %}
+                            </div>
+                            
+                        </div>
+                    {%- endcase -%}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="copyright-section">
+        <p class="copyright-section-text">
+            {{ s.copyright }}
+        </p>
+    </section>
+    <!-- footer section end -->
+</footer>
+
+
+{% schema %}
+    {
+      "name": "Footer",
+      "settings": [
+        {
+          "type": "header",
+          "content": "CopyRight"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "copyright",
+          "label": "Copy Right",
+          "default" : "Copyright &copy; 2024.All rights reserved by <a href='www.qualixe.com'>QUALIXE</a>."
+        },
+        {
+          "type": "header",
+          "content": "Color"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color Scheme",
+          "default" : "scheme-1"
+        }
+      ],
+      "blocks": [
+        {
+            "type": "contact",
+            "limit": 1,
+            "name": "Contact",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading",
+                    "default" : "Contact Us"
+                },
+                {
+                    "type": "text",
+                    "id": "phone",
+                    "label": "Phone",
+                    "default" : "+8801521-481618"
+                },
+                {
+                    "type": "text",
+                    "id": "email",
+                    "label": "Email",
+                    "default" : "clumbusroasters@gmail.com"
+                },
+                {
+                    "type": "textarea",
+                    "id": "address",
+                    "label": "Address",
+                    "default" : "Gulshan-2, Dhaka-1216"
+                },
+                {
+                    "type": "text",
+                    "id": "social_heading",
+                    "label": "Social Heading",
+                    "default" : "FOLLOW US:"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "social",
+                    "label": "Social",
+                    "default" : true
+                }
+            ]
+        },
+        {
+            "type": "menu",
+            "limit": 1,
+            "name": "Menu",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading",
+                    "default" : "Quick Link"
+                },
+                {
+                    "type": "link_list",
+                    "id": "menu",
+                    "label": "Menu",
+                    "default" : "footer"
+                }
+            ]
+        },
+        {
+            "type": "newsletter",
+            "limit": 1,
+            "name": "Newsletter",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading",
+                    "default" : "NEWSLETTER"
+                },
+                {
+                    "type": "textarea",
+                    "id": "text",
+                    "label": "Text",
+                    "default" : "Subscribe to receive updates, access to exclusive deals, and more."
+                },
+                {
+                    "type": "text",
+                    "id": "button",
+                    "label": "Button",
+                    "default" : "Subscribe"
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Footer",
+          "settings": {
+          }
+        }
+      ]
+    }
+  {% endschema %}

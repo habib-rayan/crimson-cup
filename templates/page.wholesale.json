@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-banner",
+      "settings": {
+        "background": "shopify:\/\/shop_images\/products-page-banner.png",
+        "color_scheme": ""
+      }
+    },
+    "wholesale_p3NdAr": {
+      "type": "wholesale",
+      "settings": {
+        "heading": "Get in touch",
+        "text": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium obcaecati ea dolorem amet temporibus quae! Iure debitis molestiae nam iste.Lorem ipsum dolor sit, <\/p><p><\/p><p>amet consectetur adipisicing elit. Vitae temporibus, mollitia <a href=\"#\">Wholesale Contact Form<\/a> voluptatibus minima assumenda molestias.Lorem ipsum dolor sit amet, consectetur <a href=\"#\">click here<\/a> adipisicing elit. Quisquam, eum.<\/p>",
+        "button": "Send",
+        "color_scheme": "scheme-5dec3c2f-a36d-4067-84c1-c1fae95fc481"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "wholesale_p3NdAr"
+  ]
+}

@@ -1,0 +1,102 @@
+{%- assign s = section.settings -%}
+<section class="section testimonial-section color-{{ s.color_scheme }}">
+    <div class="container">
+        <div class="background-with-text-content">
+            <h2 class="background-with-text-content-heading wow animate__animated animate__fadeInUp"
+                data-wow-duration="1s" data-wow-delay=".1s">{{ s.heading }}
+            </h2>
+            {%- if s.text !=blank -%}
+                <p class="background-with-text-content-text background-with-heading-text wow animate__animated animate__fadeInUp"
+                    data-wow-duration="1s" data-wow-delay=".3s">
+                    {{ s.text }}
+                </p>
+            {%- endif -%}
+        </div>
+
+        <div class="swiper testimonial-swiper-slider">
+            <div class="swiper-wrapper testimonial-slider-items">
+                {% for block in  section.blocks %}
+                {%- assign b = block.settings -%}
+                <div class="swiper-slide testimonial-slider-item">
+                    <div class="testimonial-slider-content">
+                        <p class="testimonial-slider-content-text">
+                            {{ b.text }}
+                        </p>
+                        <h6 class="testimonial-slider-content-heading">
+                            {{ b.name }} <span>{{ b.position }}</span>
+                        </h6>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+    {
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default" : "TESTIMONIALS"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ullam reiciendis doloremque aut"
+        },
+        {
+          "type": "header",
+          "content": "Color"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color Scheme",
+          "default" : "scheme-1"
+        }
+        
+      ],
+      "blocks": [
+        {
+            "type": "testimonial",
+            "name": "Testimonial",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "name",
+                    "label": "Name",
+                    "default" : "John Smith, <span>coffee manager</span>"
+                },
+                {
+                    "type": "text",
+                    "id": "position",
+                    "label": "Position",
+                    "default" : "coffee manager"
+                },
+                {
+                    "type": "textarea",
+                    "id": "text",
+                    "label": "Text",
+                    "default" : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates nihil minima reiciendis molestiae, repudiandae id et ipsa facilis commodi. Quia dignissimos nulla est repudiandae ab labore ea fugiat aliquid odio."
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Testimonial",
+          "settings": {
+          }
+        }
+      ]
+    }
+  {% endschema %}

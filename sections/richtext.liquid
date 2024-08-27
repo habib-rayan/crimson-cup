@@ -1,0 +1,113 @@
+{%- assign s = section.settings -%}
+<section class="section bg-with-card-section color-{{ s.color_scheme }}" id="section_{{ section.id }}">
+    <div class="container">
+        <div class="bg-with-card wow animate__animated animate__zoomIn" data-wow-duration="1s"
+            data-wow-delay=".1s">
+            {% for block in section.blocks %}
+                {%- assign b = block.settings -%}
+                {%- case block.type -%}
+                    {%- when 'heading' -%}
+                    <h3 class="bg-with-card-heading">
+                        {{ b.heading }}
+                    </h3>
+                    {%- when 'text' -%}
+                    <p class="bg-with-card-text">
+                        {{ b.text }}
+                    </p>
+                    {%- when 'button' -%}
+                    <div class="bg-with-card-btn">
+                        <a class="btn custom-btn" href="{{ b.link }}">{{ b.button }}</a>
+                    </div>
+                {% endcase %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{%- style -%}
+    {%- if s.background !=blank -%}
+    #section_{{ section.id }} {
+            background-image: url({{ s.background |  image_url: width:3000  }});
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    {%- endif -%}
+{%- endstyle -%}
+
+{% schema %}
+    {
+      "name": "Rich Text",
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "background",
+            "label": "Background"
+        },
+        {
+          "type": "header",
+          "content": "Color"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color Scheme",
+          "default" : "scheme-1"
+        }
+      ],
+      "blocks": [
+            {
+                "type": "heading",
+                "limit": 1,
+                "name": "Heading",
+                "settings": [
+                    {
+                        "type": "textarea",
+                        "id": "heading",
+                        "label": "Heading",
+                        "default" : "Lorem ipsum dolor sit"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "limit": 1,
+                "name": "Text",
+                "settings": [
+                    {
+                        "type": "textarea",
+                        "id": "text",
+                        "label": "Text",
+                        "default" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maxime iste ullam natus numquam consectetur fugiat vero asperiores porro pariatur!"
+                    }
+                ]
+            },
+            {
+                "type": "button",
+                "limit": 1,
+                "name": "Button",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "button",
+                        "label": "Button",
+                        "default" : "Shop Now"
+                    },
+                    {
+                        "type": "url",
+                        "id": "link",
+                        "label": "Link",
+                        "default" : "\/collections\/all"
+                    }
+                ]
+            }
+        ],
+      "presets": [
+        {
+          "name": "Rich Text",
+          "settings": {
+          }
+        }
+      ]
+    }
+  {% endschema %}

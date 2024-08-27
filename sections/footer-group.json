@@ -1,0 +1,49 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "contact_qA3jen": {
+          "type": "contact",
+          "settings": {
+            "heading": "Contact Us",
+            "phone": "+8801521-481618",
+            "email": "clumbusroasters@gmail.com",
+            "address": "Gulshan-2, Dhaka-1216",
+            "social_heading": "FOLLOW US:",
+            "social": true
+          }
+        },
+        "menu_aUKtyw": {
+          "type": "menu",
+          "settings": {
+            "heading": "Quick Link",
+            "menu": "footer"
+          }
+        },
+        "newsletter_fdqynV": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "NEWSLETTER",
+            "tex": "Subscribe to receive updates, access to exclusive deals, and more.",
+            "button": "Subscribe"
+          }
+        }
+      },
+      "block_order": [
+        "contact_qA3jen",
+        "menu_aUKtyw",
+        "newsletter_fdqynV"
+      ],
+      "settings": {
+        "copyright": "Copyright © 2024.All rights reserved by <a href=\"#\">QUALIXE<\/a>.",
+        "color_scheme": "scheme-1"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

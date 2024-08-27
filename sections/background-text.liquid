@@ -1,0 +1,147 @@
+{%- assign s = section.settings -%}
+<section class="section background-with-text-content-section2 color-{{ s.color_scheme }}" id="section_{{ section.id }}">
+    <div class="section-overlay"></div>
+    <div class="container">
+        <div class="background-with-text-content-section-wrapper">
+            {%- if s.content_position == 'right' -%}
+                <div class="background-with-text-content-section-empty-area"></div>
+            {%- endif -%}
+            
+            <div class="background-with-text-content">
+                {% for block in section.blocks %}
+                    {%- assign b = block.settings -%}
+                    {%- case block.type -%}
+                        {%- when 'heading' -%}
+                        <h2 class="background-with-text-content-heading wow animate__animated animate__slideIn{{ s.animation }}"
+                            data-wow-duration="1s" data-wow-delay=".1s">{{ b.heading }}
+                        </h2>
+                        {%- when 'text' -%}
+                        <p class="background-with-text-content-text wow animate__animated animate__slideIn{{ s.animation }}"
+                            data-wow-duration="1s" data-wow-delay=".3s">
+                           {{ b.text }}
+                        </p>
+                        {%- when 'button' -%}
+                        <div class="background-with-text-content-btn wow animate__animated animate__slideIn{{ s.animation }}"
+                            data-wow-duration="1s" data-wow-delay=".5s">
+                            <a class="custom-btn btn" href="{{ b.link }}"> {{ b.button }}</a>
+                        </div>
+                    {% endcase %}
+                {% endfor %}
+            </div>
+            {%- if s.content_position == 'left' -%}
+                <div class="background-with-text-content-section-empty-area"></div>
+            {%- endif -%}
+        </div>
+    </div>
+</section>
+
+{% style %}
+    #section_{{ section.id }} {
+        background: url("{{ s.background |  image_url: width:3000  }}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+{% endstyle %}
+
+
+{% schema %}
+    {
+        "name": "Background Text",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "background",
+                "label": "Background"
+            },
+            {
+                "type": "select",
+                "id": "content_position",
+                "options": [
+                    { "label": "Left", "value": "left" },
+                    { "label": "Right", "value": "right" },
+                    { "label": "Center", "value": "center" }
+                ],
+                "label": "Content Position",
+                "default": "right"
+            },
+            {
+                "type": "select",
+                "id": "animation",
+                "options": [
+                    { "label": "Left", "value": "Left" },
+                    { "label": "Right", "value": "Right" },
+                    { "label": "Up", "value": "Up" },
+                    { "label": "Down", "value": "Down" }
+
+                ],
+                "label": "Animation",
+                "default": "Right"
+            },
+            {
+                "type": "header",
+                "content": "Color"
+            },
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "label": "Color Scheme",
+                "default" : "scheme-1"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "heading",
+                "limit": 1,
+                "name": "Heading",
+                "settings": [
+                    {
+                        "type": "textarea",
+                        "id": "heading",
+                        "label": "Heading",
+                        "default" : "FRESH HARVEST"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "limit": 1,
+                "name": "Text",
+                "settings": [
+                    {
+                        "type": "textarea",
+                        "id": "text",
+                        "label": "Text",
+                        "default" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maxime iste ullam natus numquam consectetur fugiat vero asperiores porro pariatur!"
+                    }
+                ]
+            },
+            {
+                "type": "button",
+                "limit": 1,
+                "name": "Button",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "button",
+                        "label": "Button",
+                        "default" : "Shop Now"
+                    },
+                    {
+                        "type": "url",
+                        "id": "link",
+                        "label": "Link",
+                        "default" : "\/collections\/all"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Background Text",
+                "settings": {
+                }
+            }
+        ]
+    }
+{% endschema %}

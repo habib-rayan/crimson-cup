@@ -1,0 +1,132 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-banner",
+      "settings": {
+        "background": "shopify:\/\/shop_images\/products-page-banner.png",
+        "color_scheme": ""
+      }
+    },
+    "about_CEBze3": {
+      "type": "about",
+      "blocks": {
+        "item_QJpD3M": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about-us-item-img-1.jpg",
+            "heading": "Lorem ipsum dolor sit amet",
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maxime iste ullam natus numquam consectetur fugiat vero asperiores porro pariatur!"
+          }
+        },
+        "item_H4dbGp": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about-us-item-img-2.jpg",
+            "heading": "Lorem ipsum dolor sit amet",
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maxime iste ullam natus numquam consectetur fugiat vero asperiores porro pariatur!"
+          }
+        }
+      },
+      "block_order": [
+        "item_QJpD3M",
+        "item_H4dbGp"
+      ],
+      "settings": {
+        "heading": "ABOUT CLUMBUSROASTERS",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ullam reiciendis doloremque aut",
+        "color_scheme": ""
+      }
+    },
+    "testimonial_qpJfqH": {
+      "type": "testimonial",
+      "blocks": {
+        "testimonial_BRkQr3": {
+          "type": "testimonial",
+          "settings": {
+            "name": "John Smith, coffee manager",
+            "position": "coffee manager",
+            "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates nihil minima reiciendis molestiae, repudiandae id et ipsa facilis commodi. Quia dignissimos nulla est repudiandae ab labore ea fugiat aliquid odio."
+          }
+        },
+        "testimonial_8Wji9g": {
+          "type": "testimonial",
+          "settings": {
+            "name": "John Smith, coffee manager",
+            "position": "coffee manager",
+            "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates nihil minima reiciendis molestiae, repudiandae id et ipsa facilis commodi. Quia dignissimos nulla est repudiandae ab labore ea fugiat aliquid odio."
+          }
+        },
+        "testimonial_Xm8AJR": {
+          "type": "testimonial",
+          "settings": {
+            "name": "John Smith, coffee manager",
+            "position": "coffee manager",
+            "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates nihil minima reiciendis molestiae, repudiandae id et ipsa facilis commodi. Quia dignissimos nulla est repudiandae ab labore ea fugiat aliquid odio."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_BRkQr3",
+        "testimonial_8Wji9g",
+        "testimonial_Xm8AJR"
+      ],
+      "settings": {
+        "heading": "TESTIMONIALS",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ullam reiciendis doloremque aut",
+        "color_scheme": ""
+      }
+    },
+    "counter_bbbwLh": {
+      "type": "counter",
+      "blocks": {
+        "counter_EUJVUr": {
+          "type": "counter",
+          "settings": {
+            "number": 250,
+            "heading": "Varieties of Coffee",
+            "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+          }
+        },
+        "counter_gqDnJD": {
+          "type": "counter",
+          "settings": {
+            "number": 160,
+            "heading": "Hours of Testing",
+            "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+          }
+        },
+        "counter_mzH3e3": {
+          "type": "counter",
+          "settings": {
+            "number": 420,
+            "heading": "Coffee Markets",
+            "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+          }
+        },
+        "counter_cxUVAU": {
+          "type": "counter",
+          "settings": {
+            "number": 350,
+            "heading": "Coffee Brands",
+            "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+          }
+        }
+      },
+      "block_order": [
+        "counter_EUJVUr",
+        "counter_gqDnJD",
+        "counter_mzH3e3",
+        "counter_cxUVAU"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "about_CEBze3",
+    "testimonial_qpJfqH",
+    "counter_bbbwLh"
+  ]
+}

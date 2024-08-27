@@ -1,0 +1,387 @@
+{
+  "sections": {
+    "hero_banner_6RRkYW": {
+      "type": "hero-banner",
+      "blocks": {
+        "heading_CjMkKE": {
+          "type": "heading",
+          "settings": {
+            "heading": "A GOOD COFFEE SHOP"
+          }
+        },
+        "text_WeNXEd": {
+          "type": "text",
+          "settings": {
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maxime iste ullam natus numquam consectetur fugiat vero asperiores porro pariatur!"
+          }
+        },
+        "button_RHQERE": {
+          "type": "button",
+          "settings": {
+            "button": "Shop Now",
+            "link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CjMkKE",
+        "text_WeNXEd",
+        "button_RHQERE"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    },
+    "background_text_dX99i6": {
+      "type": "background-text",
+      "blocks": {
+        "heading_HfkUCG": {
+          "type": "heading",
+          "settings": {
+            "heading": "FRESH HARVEST"
+          }
+        },
+        "text_7piPhr": {
+          "type": "text",
+          "settings": {
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maxime iste ullam natus numquam consectetur fugiat vero asperiores porro pariatur!"
+          }
+        },
+        "button_8rf8qP": {
+          "type": "button",
+          "settings": {
+            "button": "Shop Now",
+            "link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HfkUCG",
+        "text_7piPhr",
+        "button_8rf8qP"
+      ],
+      "settings": {
+        "background": "shopify:\/\/shop_images\/coffee-section-bg-1.jpg",
+        "content_position": "right",
+        "animation": "Right",
+        "color_scheme": ""
+      }
+    },
+    "background_text_MUDKQw": {
+      "type": "background-text",
+      "blocks": {
+        "heading_CatkAf": {
+          "type": "heading",
+          "settings": {
+            "heading": "CRACK A SMILE"
+          }
+        },
+        "text_rgTjbC": {
+          "type": "text",
+          "settings": {
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maxime iste ullam natus numquam consectetur fugiat vero asperiores porro pariatur!"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CatkAf",
+        "text_rgTjbC"
+      ],
+      "settings": {
+        "background": "shopify:\/\/shop_images\/coffee-section-bg-3.jpg",
+        "content_position": "left",
+        "animation": "Left",
+        "color_scheme": ""
+      }
+    },
+    "background_text_gKyK4k": {
+      "type": "background-text",
+      "blocks": {
+        "heading_hWXdxT": {
+          "type": "heading",
+          "settings": {
+            "heading": "DISCOVER DOYENNE"
+          }
+        },
+        "text_VVEHxc": {
+          "type": "text",
+          "settings": {
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maxime iste ullam natus numquam consectetur fugiat vero asperiores porro pariatur!"
+          }
+        },
+        "button_CwgpFy": {
+          "type": "button",
+          "settings": {
+            "button": "Shop Now",
+            "link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hWXdxT",
+        "text_VVEHxc",
+        "button_CwgpFy"
+      ],
+      "settings": {
+        "background": "shopify:\/\/shop_images\/coffee-section-bg-2-2.jpg",
+        "content_position": "right",
+        "animation": "Right",
+        "color_scheme": ""
+      }
+    },
+    "background_text_cJBFXe": {
+      "type": "background-text",
+      "blocks": {
+        "heading_egBqhj": {
+          "type": "heading",
+          "settings": {
+            "heading": "NEW FROM TERROIR"
+          }
+        },
+        "text_ef9hfH": {
+          "type": "text",
+          "settings": {
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maxime iste ullam natus numquam consectetur fugiat vero asperiores porro pariatur!"
+          }
+        },
+        "button_CbLLET": {
+          "type": "button",
+          "settings": {
+            "button": "Shop Now",
+            "link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "heading_egBqhj",
+        "text_ef9hfH",
+        "button_CbLLET"
+      ],
+      "settings": {
+        "background": "shopify:\/\/shop_images\/coffee-section-bg-4.jpg",
+        "content_position": "left",
+        "animation": "Left",
+        "color_scheme": ""
+      }
+    },
+    "text_item_6JPpbV": {
+      "type": "text-item",
+      "blocks": {
+        "left_item_kcxYyL": {
+          "type": "left_item",
+          "settings": {
+            "heading": "The Perfect Cup",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid iduntus ut",
+            "icon": "shopify:\/\/shop_images\/icon-1.png"
+          }
+        },
+        "left_item_9pTJhr": {
+          "type": "left_item",
+          "settings": {
+            "heading": "The Moka Pot",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid iduntus ut",
+            "icon": "shopify:\/\/shop_images\/icon-6.png"
+          }
+        },
+        "left_item_6JXNTM": {
+          "type": "left_item",
+          "settings": {
+            "heading": "Supreme Beans",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid iduntus ut",
+            "icon": "shopify:\/\/shop_images\/icon-3.png"
+          }
+        },
+        "right_item_F6ece4": {
+          "type": "right_item",
+          "settings": {
+            "heading": "The Cofee Machine",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid iduntus ut",
+            "icon": "shopify:\/\/shop_images\/icon-4.png"
+          }
+        },
+        "right_item_nLKzMX": {
+          "type": "right_item",
+          "settings": {
+            "heading": "French Press",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid iduntus ut",
+            "icon": "shopify:\/\/shop_images\/icon-5.png"
+          }
+        },
+        "right_item_f8APDF": {
+          "type": "right_item",
+          "settings": {
+            "heading": "Coffee To Go",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid iduntus ut",
+            "icon": "shopify:\/\/shop_images\/icon-6.png"
+          }
+        }
+      },
+      "block_order": [
+        "left_item_kcxYyL",
+        "left_item_9pTJhr",
+        "left_item_6JXNTM",
+        "right_item_F6ece4",
+        "right_item_nLKzMX",
+        "right_item_f8APDF"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/coffee-product-img-1.png",
+        "color_scheme": ""
+      }
+    },
+    "products_xPLV4X": {
+      "type": "products",
+      "settings": {
+        "heading": "OUR BEST PRODUCTS",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ullam reiciendis doloremque aut",
+        "collection": "best-seller",
+        "button": "SHOP ALL COFFEE",
+        "link": "shopify:\/\/collections\/all",
+        "background": "shopify:\/\/shop_images\/product-slider-bg.jpg",
+        "color_scheme": ""
+      }
+    },
+    "collection_banner_bjipT7": {
+      "type": "collection-banner",
+      "blocks": {
+        "collection_t4H4Gm": {
+          "type": "collection",
+          "settings": {
+            "heading": "Apparel",
+            "link": "shopify:\/\/collections\/all",
+            "image": "shopify:\/\/shop_images\/img-gallary-5.jpg"
+          }
+        },
+        "collection_GJdxVK": {
+          "type": "collection",
+          "settings": {
+            "heading": "Apparel",
+            "link": "shopify:\/\/collections\/all",
+            "image": "shopify:\/\/shop_images\/img-gallary-2.jpg"
+          }
+        },
+        "collection_gfqY6K": {
+          "type": "collection",
+          "settings": {
+            "heading": "Apparel",
+            "link": "shopify:\/\/collections\/all",
+            "image": "shopify:\/\/shop_images\/img-gallary-1.jpg"
+          }
+        },
+        "collection_f4gMwH": {
+          "type": "collection",
+          "settings": {
+            "heading": "Apparel",
+            "link": "shopify:\/\/collections\/all",
+            "image": "shopify:\/\/shop_images\/img-gallary-6.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "collection_t4H4Gm",
+        "collection_GJdxVK",
+        "collection_gfqY6K",
+        "collection_f4gMwH"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    },
+    "testimonial_nbngJV": {
+      "type": "testimonial",
+      "blocks": {
+        "testimonial_JXARxU": {
+          "type": "testimonial",
+          "settings": {
+            "name": "John Smith, <span>coffee manager<\/span>",
+            "position": "coffee manager",
+            "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates nihil minima reiciendis molestiae, repudiandae id et ipsa facilis commodi. Quia dignissimos nulla est repudiandae ab labore ea fugiat aliquid odio."
+          }
+        },
+        "testimonial_38yWkx": {
+          "type": "testimonial",
+          "settings": {
+            "name": "John Smith, <span>coffee manager<\/span>",
+            "position": "coffee manager",
+            "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates nihil minima reiciendis molestiae, repudiandae id et ipsa facilis commodi. Quia dignissimos nulla est repudiandae ab labore ea fugiat aliquid odio."
+          }
+        },
+        "testimonial_hgGjze": {
+          "type": "testimonial",
+          "settings": {
+            "name": "John Smith, <span>coffee manager<\/span>",
+            "position": "coffee manager",
+            "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates nihil minima reiciendis molestiae, repudiandae id et ipsa facilis commodi. Quia dignissimos nulla est repudiandae ab labore ea fugiat aliquid odio."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_JXARxU",
+        "testimonial_38yWkx",
+        "testimonial_hgGjze"
+      ],
+      "settings": {
+        "heading": "TESTIMONIALS",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ullam reiciendis doloremque aut",
+        "color_scheme": ""
+      }
+    },
+    "richtext_CjWGPA": {
+      "type": "richtext",
+      "blocks": {
+        "heading_Am3EAE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit"
+          }
+        },
+        "text_Edh7Kx": {
+          "type": "text",
+          "settings": {
+            "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maxime iste ullam natus numquam consectetur fugiat vero asperiores porro pariatur!"
+          }
+        },
+        "button_iiqJVD": {
+          "type": "button",
+          "settings": {
+            "button": "Shop Now",
+            "link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Am3EAE",
+        "text_Edh7Kx",
+        "button_iiqJVD"
+      ],
+      "settings": {
+        "background": "shopify:\/\/shop_images\/bg-with-card-bg.jpg",
+        "color_scheme": ""
+      }
+    },
+    "blog_mYrkXk": {
+      "type": "blog",
+      "settings": {
+        "heading": "OUR Blog",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ullam reiciendis doloremque aut",
+        "blog": "news",
+        "button": "SHOP ALL COFFEE",
+        "link": "shopify:\/\/collections\/all",
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "hero_banner_6RRkYW",
+    "background_text_dX99i6",
+    "background_text_MUDKQw",
+    "background_text_gKyK4k",
+    "background_text_cJBFXe",
+    "text_item_6JPpbV",
+    "products_xPLV4X",
+    "collection_banner_bjipT7",
+    "testimonial_nbngJV",
+    "richtext_CjWGPA",
+    "blog_mYrkXk"
+  ]
+}

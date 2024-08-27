@@ -1,0 +1,21 @@
+<div class="product-item wow animate__animated animate__zoomIn" data-wow-duration="1s"
+                    data-wow-delay=".1s">
+    <div class="slider-card">
+        <div class="slider-card-img">
+            <a href="{{ product.url }}">
+                {%- if product.featured_image !=blank -%}
+                    {{ product.featured_image |  image_url: width:1000 |  image_tag:class:'product-image'  }}
+                {% else %}
+                    {{ 'image' |  placeholder_svg_tag:'header-svg-logo' }}
+                {%- endif -%}
+            </a>
+            <div class="slider-card-btn">
+                <a class="custom-btn btn" href="{{ product.url }}">ADD TO CARD</a>
+            </div>
+        </div>
+        <div class="slider-card-content">
+            <h6 class="slider-card-item-name">{{ product.title }}</h6>
+            <h6 class="slider-card-item-price">{{ product.price | money }}</h6>
+        </div>
+    </div>
+</div>

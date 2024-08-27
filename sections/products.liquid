@@ -1,0 +1,123 @@
+{%- assign s = section.settings -%}
+<section class="section product-slider-section color-{{ s.color_scheme }}" id="section_{{ section.id }}">
+    <div class="container">
+        <div class="background-with-text-content">
+            <h2 class="background-with-text-content-heading wow animate__animated animate__fadeInUp"
+                data-wow-duration="1s" data-wow-delay=".1s"> {{ s.heading }}
+            </h2>
+            {%- if  s.text !=blank -%}
+            <p class="background-with-text-content-text background-with-heading-text wow animate__animated animate__fadeInUp"
+                data-wow-duration="1s" data-wow-delay=".3s">
+                {{ s.text }}
+            </p>
+            {%- endif -%}
+        </div>
+
+        <div class="swiper product-swiper-slider">
+            <div class="swiper-wrapper">
+                {% for product in s.collection.products %}
+
+                <div class="swiper-slide">
+                    <div class="slider-card">
+                        <div class="slider-card-img">
+                            <a href="{{ product.url }}">
+                                {%- if product.featured_image !=blank -%}
+                                    {{ product.featured_image |  image_url: width:1000 |  image_tag:class:'product-image'  }}
+                                {% else %}
+                                    {{ 'image' |  placeholder_svg_tag:'header-svg-logo' }}
+                                {%- endif -%}
+                            </a>
+                            <div class="slider-card-btn">
+                                <a class="custom-btn btn" href="{{ product.url }}">ADD TO CARD</a>
+                            </div>
+                        </div>
+                        <div class="slider-card-content">
+                            <h6 class="slider-card-item-name">{{ product.title }}</h6>
+                            <h6 class="slider-card-item-price">{{ product.price | money }}</h6>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+        {%- if s.button !=blank -%}
+        <div class="slider-section-btm-btn">
+            <a class="btn custom-btn" href="{{ s.link }}">{{ s.button }}</a>
+        </div>
+        {%- endif -%}
+    </div>
+</section>
+
+{%- style -%}
+    {%- if s.background !=blank -%}
+    #section_{{ section.id }} {
+            background-image: url({{ s.background |  image_url: width:3000  }});
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    {%- endif -%}
+{%- endstyle -%}
+
+{% schema %}
+    {
+      "name": "Products",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default" : "OUR BEST PRODUCTS"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ullam reiciendis doloremque aut"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": "Button",
+          "default" : "SHOP ALL COFFEE"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "default" : "\/collections\/all"
+        },
+        {
+          "type": "image_picker",
+          "id": "background",
+          "label": "Background"
+        },
+        {
+          "type": "header",
+          "content": "Color"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color Scheme",
+          "default" : "scheme-1"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Products",
+          "settings": {
+          }
+        }
+      ]
+    }
+  {% endschema %}

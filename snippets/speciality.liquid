@@ -1,0 +1,21 @@
+{%- assign speciality = product.metafields.custom.speciality | split: '--' -%}
+{%- if speciality !=blank -%}
+<div class="single-product-speciality">
+    <div class="single-product-speciality-heading-wrapper">
+        <span class="single-product-speciality-heading-icon"><i class="fa-solid fa-star"></i></span>
+        <h4 class="single-product-speciality-heading wow animate__animated animate__fadeInUp"
+            data-wow-duration="1s" data-wow-delay=".1s">{{ block.settings.heading }}</h4>
+    </div>
+    <ul class="single-product-speciality-lists">
+        {% for item in speciality %}
+            <li class="single-product-speciality-list wow animate__animated animate__fadeInUp"
+                data-wow-duration="1s" data-wow-delay=".2s">
+                <span class="single-product-speciality-list-icon">
+                    <i class="fa-solid fa-check"></i>
+                </span>
+                <p class="single-product-speciality-list-text">{{ item }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{%- endif -%}

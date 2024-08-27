@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-banner",
+      "settings": {
+        "background": "shopify:\/\/shop_images\/products-page-banner.png",
+        "color_scheme": ""
+      }
+    },
+    "main_blog_hnUN9z": {
+      "type": "main-blog",
+      "settings": {
+        "heading": "The Coffee Herald",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincidid unt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main_blog_hnUN9z"
+  ]
+}

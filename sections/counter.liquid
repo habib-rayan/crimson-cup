@@ -1,0 +1,72 @@
+{%- assign s = section.settings -%}
+<section class="section counter-up-section bg-{{ s.color_scheme }}">
+    <div class="container">
+        <div class="counter-up-items">
+            {% for block in section.blocks %}
+            {%- assign b = block.settings -%}
+            <div class="counter-up-item">
+                <span class="counter-text about-page-counter-up">{{ b.number }}</span>
+                <h5 class="counter-up-item-heading">{{ b.heading }}</h5>
+                <p class="counter-up-item-text">
+                    {{ b.text }}
+                </p>
+            </div>
+            {% endfor %}
+        </div> 
+    </div>
+</section>
+
+
+
+{% schema %}
+    {
+        "name": "Counter",
+        "settings": [
+            
+            {
+                "type": "header",
+                "content": "Color"
+            },
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "label": "Color Scheme",
+                "default" : "scheme-1"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "counter",
+                "limit": 4,
+                "name": "Counter",
+                "settings": [
+                    {
+                        "type": "number",
+                        "id": "number",
+                        "label": "Number",
+                        "default" : 250
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Heading",
+                        "default" : "Varieties of Coffee"
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "text",
+                        "label": "Text",
+                        "default" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Counter",
+                "settings": {
+                }
+            }
+        ]
+    }
+{% endschema %}

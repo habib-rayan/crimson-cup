@@ -1,0 +1,7 @@
+<div class="single-product-total-price wow animate__animated animate__fadeInUp"
+data-wow-duration="1s" data-wow-delay=".6s">
+<h3 class="single-product-total-offer-price">{{ product.price | money }}</h3>
+{%- if product.compare_at_price > product.price -%}
+    <span class="single-product-previous-total-price">{{ product.compare_at_price | money }}</span>
+{%- endif -%}
+</div>

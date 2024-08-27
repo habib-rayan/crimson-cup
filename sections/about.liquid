@@ -1,0 +1,105 @@
+{%- assign s = section.settings -%}
+<section class="section about-us-section bg-{{ s.color_scheme }}">
+    <div class="container">
+        <div class="page-common-heading">
+            <div class="background-with-text-content">
+                <h2 class="background-with-text-content-heading wow animate__animated animate__fadeInUp"
+                    data-wow-duration="1s" data-wow-delay=".1s">{{ s.heading }}
+                </h2>
+                {%- if s.text !=blank -%}
+                <p class="background-with-text-content-text background-with-heading-text wow animate__animated animate__fadeInUp"
+                    data-wow-duration="1s" data-wow-delay=".3s">
+                    {{ s.text }}
+                </p>
+                {%- endif -%}
+            </div>
+        </div>
+        <div class="about-us-items">
+            {% for block in section.blocks %}
+            {%- assign b = block.settings -%}
+            <div class="about-us-item">
+                <div class="about-us-item-img  wow animate__animated animate__zoomIn" data-wow-duration="1s"
+                    data-wow-delay=".1s">
+                    {%- if b.image !=blank -%}
+                        {{ b.image |  image_url: width:500 |  image_tag:class:'about-img'  }}
+                    {% else %}
+                        {{ 'image' |  placeholder_svg_tag:'about-svg-logo' }}
+                    {%- endif -%}
+                </div>
+                <div class="about-us-item-content">
+                    <h5 class="about-us-item-content-heading  wow animate__animated animate__fadeInUp"
+                    data-wow-duration="1s" data-wow-delay=".1s">{{ b.heading }}</h5>
+                    <p class="about-us-item-content-text  wow animate__animated animate__fadeInUp"
+                        data-wow-duration="1s" data-wow-delay=".3s">
+                      {{ b.text }}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+    {
+        "name": "About",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default" : "ABOUT CLUMBUSROASTERS"
+            },
+            {
+                "type": "textarea",
+                "id": "text",
+                "label": "Text",
+                "default" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ullam reiciendis doloremque aut"
+            },
+            {
+                "type": "header",
+                "content": "Color"
+            },
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "label": "Color Scheme",
+                "default" : "scheme-1"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "item",
+                "limit": 4,
+                "name": "Item",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Heading",
+                        "default" : "Lorem ipsum dolor sit amet"
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "text",
+                        "label": "Text",
+                        "default" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maxime iste ullam natus numquam consectetur fugiat vero asperiores porro pariatur!"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "About",
+                "settings": {
+                }
+            }
+        ]
+    }
+{% endschema %}

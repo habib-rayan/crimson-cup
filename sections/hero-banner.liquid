@@ -1,0 +1,100 @@
+{%- assign s = section.settings -%}
+<section class="section banner-section color-{{ s.color_scheme }} gredient">
+    <div class="container">
+        <div class="hero-content-wrapper">
+            <div class="hero-content">
+                {% for block in section.blocks %}
+                    {%- assign b = block.settings -%}
+                    {%- case block.type -%}
+                        {%- when 'heading' -%}
+                            <h1 class="hero-heading wow animate__animated animate__slideInLeft" data-wow-duration="1s"
+                            data-wow-delay=".1s">{{ b.heading }}</h1>
+                        {%- when 'text' -%}
+                            <p class="hero-text wow animate__animated animate__slideInLeft" data-wow-duration="1s"
+                                data-wow-delay=".1s">
+                                {{ b.text }}
+                            </p>
+                        {%- when 'button' -%}
+                            <div class="hero-btnwow animate__animated animate__slideInLeft" data-wow-duration="1s"
+                                data-wow-delay=".5s">
+                                <a class="btn custom-btn" href="{{ b.link }}">{{ b.button }}</a>
+                            </div>
+                        {%- endcase -%}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+    {
+        "name": "Hero Banner",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Color"
+            },
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "label": "Color Scheme",
+                "default" : "scheme-1"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "heading",
+                "limit": 1,
+                "name": "Heading",
+                "settings": [
+                    {
+                        "type": "textarea",
+                        "id": "heading",
+                        "label": "Heading",
+                        "default" : "A GOOD COFFEE SHOP"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "limit": 1,
+                "name": "Text",
+                "settings": [
+                    {
+                        "type": "textarea",
+                        "id": "text",
+                        "label": "Text",
+                        "default" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maxime iste ullam natus numquam consectetur fugiat vero asperiores porro pariatur!"
+                    }
+                ]
+            },
+            {
+                "type": "button",
+                "limit": 1,
+                "name": "Button",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "button",
+                        "label": "Button",
+                        "default" : "Shop Now"
+                    },
+                    {
+                        "type": "url",
+                        "id": "link",
+                        "label": "Link",
+                        "default" : "\/collections\/all"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Hero Banner",
+                "settings": {
+                }
+            }
+        ]
+    }
+{% endschema %}
